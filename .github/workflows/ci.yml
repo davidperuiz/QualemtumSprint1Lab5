@@ -15,7 +15,7 @@ jobs:
 
     - name: Set up Python
       uses: actions/setup-python@v4
-      width:
+      with:
         python-version: 3.12.1
 
     - name: Run tests
