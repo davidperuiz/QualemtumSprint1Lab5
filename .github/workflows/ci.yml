@@ -1,0 +1,23 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ main ] # Cambia "main" si tu rama principal tiene otro nombre.
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    setps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      width:
+        python-version: 3.12.1
+
+    - name: Run tests
+      run:
+        pyton -m unittest test_calculadora.py
